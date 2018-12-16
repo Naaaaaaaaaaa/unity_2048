@@ -78,48 +78,50 @@ public class GameMgr : MonoBehaviour
 
 	#region 方块移动
 	/// <summary>
-	/// 向上移动
+	/// 向左移动
 	/// </summary>
-	private void MoveToUp()
+	private void MoveToLeft()
 	{
-		for (int j = 0; j < 4; j++)
+		for (int y = 0; y < 4; y++)
 		{
-			for (int i = 0; i < 4; i++)
+			for (int x = 0; x < 4; x++)
 			{
-				if (_model.SquareValue[i, j] == 0)
+				if (_model.SquareValue[x, y] == 0)
 				{
-					for (int k = i + 1; k < 4; k++)
+					for (int k = x + 1; k < 4; k++)
 					{
-						if (_model.SquareValue[k, j] != 0)
+						if (_model.SquareValue[k, y] != 0)
 						{
-							_model.SquareValue[i, j] = _model.SquareValue[k, j];
-							_model.SquareValue[k, j] = 0;
+							_model.SquareValue[x, y] = _model.SquareValue[k, y];
+							_model.SquareValue[k, y] = 0;
 							//TODO 修改位置,将方块移动到该位置
 							//Pk = Pi；并且移动位置
 							break;
 						}      
 					}
-				}else if (_model.SquareValue[i, j] != 0)
+				}
+				
+				if (_model.SquareValue[x, y] != 0)
 				{
-					for (int k = i + 1; k < 4; k++)
+					for (int k = x + 1; k < 4; k++)
 					{
-						if (_model.SquareValue[k, j] != 0)
+						if (_model.SquareValue[k, y] != 0)
 						{
-							if (_model.SquareValue[i, j] == _model.SquareValue[k, j]) //两个方块的值相等
+							if (_model.SquareValue[x, y] == _model.SquareValue[k, y]) //两个方块的值相等
 							{
-								_model.SquareValue[i, j] = 2 * _model.SquareValue[i, j];
-								_model.SquareValue[k, j] = 0;
+								_model.SquareValue[x, y] = 2 * _model.SquareValue[x, y];
+								_model.SquareValue[k, y] = 0;
 								//TODO
 								break;
-							}else if (_model.SquareValue[i, j] != _model.SquareValue[k, j])//两个方块的值不相等
+							}else if (_model.SquareValue[x, y] != _model.SquareValue[k, y])//两个方块的值不相等
 							{
 								//先将value[k,j] 的值赋给一个中间值
 								//再将value[k,j] 的值设为0（即将移动）
 								//再将value[i+1，j] 的值替换成中间值
 								//这样可以避免在k == i+1 时将值清零的情况
-								int medianValue = _model.SquareValue[k, j];
-								_model.SquareValue[k, j] = 0;
-								_model.SquareValue[i + 1, j] = medianValue;
+								int medianValue = _model.SquareValue[k, y];
+								_model.SquareValue[k, y] = 0;
+								_model.SquareValue[x + 1, y] = medianValue;
 								//TODO
 								break;
 							}
@@ -144,7 +146,7 @@ public class GameMgr : MonoBehaviour
 		
 	}
 
-	private void MoveToDown()
+	private void MoveToRight()
 	{
 		for (int j = 0; j < 4; j++)
 		{
@@ -163,7 +165,9 @@ public class GameMgr : MonoBehaviour
 							break;
 						}      
 					}
-				}else if (_model.SquareValue[i, j] != 0)
+				}
+				
+				if (_model.SquareValue[i, j] != 0)
 				{
 					for (int k = i - 1; k >= 0; k--)
 					{
@@ -206,12 +210,12 @@ public class GameMgr : MonoBehaviour
 		}
 	}
 
-	private void MoveToLeft()
+	private void MoveToUp()
 	{
 		for (int j = 0; j < 4; j++)
 		{
 			for (int i = 0; i < 4; i++)
-			{
+			{ 
 				if (_model.SquareValue[i, j] == 0)
 				{
 					for (int k = j + 1; k < 4; k++)
@@ -275,7 +279,7 @@ public class GameMgr : MonoBehaviour
 		}
 	}
 
-	private void MoveToRight()
+	private void MoveToDown()
 	{
 		for (int i = 0; i < 4; i++)
 		{
