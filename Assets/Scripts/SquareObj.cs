@@ -11,18 +11,39 @@
  *History: 
 ======================================**/
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SquareObj
 {
-    private Transform _transform;
-    private int value;
-
-    public SquareObj(Transform tran, int value)
+    public Transform transform;
+    /// <summary>
+    /// 标准坐标
+    /// </summary>
+    public Transform standardPos;
+    private int _value;
+    public int Value
     {
-        _transform = tran;
-        this.value = value;
+        get { return this._value; }
+        set
+        {
+            this._value = value;
+            transform.Find("text").GetComponent<TMP_Text>().text = "" + value;
+        }
+    }
+
+    public SquareObj(Transform tran, int value, Transform standardPos)
+    {
+        this.transform = tran;
+        this.Value = value;
+        this.standardPos = standardPos;
+    }
+
+    public void DestroySquare()
+    {
+        GameObject.Destroy(transform.gameObject);
     }
 }

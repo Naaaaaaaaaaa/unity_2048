@@ -52,9 +52,18 @@ public class Ctrl : MonoBehaviour
 			int integer = i / 4;
 			//取余
 			int remainder = i % 4;
-			_Model = Model.Instance;
-			_Model.StandardPos[integer, remainder] = Root.GetChild(i).localPosition;
+			_Model.StandardPos[remainder, integer] = Root.GetChild(i);
+			SquareObj sObj = new SquareObj(GameObject.Find("parent/Num_Null").transform, GlobalData.GetValue(1), _Model.StandardPos[remainder, integer]);
+			_Model.SquareInfo[remainder, integer] = sObj;
 		}
+
+//		for (int y = 0; y < 4; y++)
+//		{
+//			for (int x = 0; x < 4; x++)
+//			{
+//				Debug.Log(string.Format("（{0},{1}）: {2}", x, y, _Model.StandardPos[x, y]));
+//			}
+//		}
 	}
 
 	/// <summary>
@@ -69,7 +78,7 @@ public class Ctrl : MonoBehaviour
 			{
 				GameObject obj = Instantiate(Resources.Load<GameObject>(_Model.Path_Num2), Vector3.zero,
 					Quaternion.identity, _View.parent);
-				obj.transform.localPosition = _Model.StandardPos[i, j];
+				obj.transform.localPosition = _Model.StandardPos[i, j].localPosition;
 			}
 		}
 	}
@@ -97,11 +106,11 @@ public class Ctrl : MonoBehaviour
 		else if(random == 2){
 			_gameObject = Instantiate(Resources.Load<GameObject>(_Model.Path_Num4), _View.parent);
 		}
-		_gameObject.transform.localPosition = _Model.StandardPos[row, col];
+		_gameObject.transform.localPosition = _Model.StandardPos[row, col].localPosition;
 		//存储到对应的二维数组中
-		_Model.SquareInfo[row, col] = new SquareObj(_gameObject.transform, GlobalData.GetValue(random));
-		_Model.SquareValue[row, col] = GlobalData.GetValue(random);
+		_Model.SquareInfo[row, col] = new SquareObj(_gameObject.transform, GlobalData.GetValue(random), _Model.StandardPos[row, col]);
+		_Model.SquareInfo[row, col].Value = GlobalData.GetValue(random);
 		_gameObject = null;
-
+		Debug.Log(string.Format("生成的物体：{0}，{1}，值：{2}", row, col, GlobalData.GetValue(random)));
 	}
 }

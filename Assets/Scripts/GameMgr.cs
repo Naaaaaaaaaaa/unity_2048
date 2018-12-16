@@ -10,7 +10,6 @@
  *Description:    
  *History: 
 ======================================**/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -84,50 +83,56 @@ public class GameMgr : MonoBehaviour
 	{
 		for (int y = 0; y < 4; y++)
 		{
+			bool isAdd = false;
 			for (int x = 0; x < 4; x++)
 			{
-				if (_model.SquareValue[x, y] == 0)
+				if (x == 0 && _model.SquareInfo[x, y].Value == 0)
 				{
+					Debug.Log("左滑第一个为0");
 					for (int k = x + 1; k < 4; k++)
 					{
-						if (_model.SquareValue[k, y] != 0)
-						{
-							_model.SquareValue[x, y] = _model.SquareValue[k, y];
-							_model.SquareValue[k, y] = 0;
-							//TODO 修改位置,将方块移动到该位置
-							//Pk = Pi；并且移动位置
-							break;
-						}      
+						if (_model.SquareInfo[k, y].Value == 0) continue;
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						//TODO 修改位置,将方块移动到该位置
+						_model.SquareInfo[x, y] = _model.SquareInfo[k, y];
+						_model.SquareInfo[x, y].transform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
+						//Pk = Pi；并且移动位置
+						break;
 					}
 				}
-				
-				if (_model.SquareValue[x, y] != 0)
+
+				if (_model.SquareInfo[x, y].Value == 0) continue;
+			    
+				for (int k = x + 1; k < 4; k++)
 				{
-					for (int k = x + 1; k < 4; k++)
+					if (_model.SquareInfo[k, y].Value == 0) continue;
+					if (_model.SquareInfo[x, y].Value == _model.SquareInfo[k, y].Value && !isAdd) //两个方块的值相等
 					{
-						if (_model.SquareValue[k, y] != 0)
-						{
-							if (_model.SquareValue[x, y] == _model.SquareValue[k, y]) //两个方块的值相等
-							{
-								_model.SquareValue[x, y] = 2 * _model.SquareValue[x, y];
-								_model.SquareValue[k, y] = 0;
-								//TODO
-								break;
-							}else if (_model.SquareValue[x, y] != _model.SquareValue[k, y])//两个方块的值不相等
-							{
-								//先将value[k,j] 的值赋给一个中间值
-								//再将value[k,j] 的值设为0（即将移动）
-								//再将value[i+1，j] 的值替换成中间值
-								//这样可以避免在k == i+1 时将值清零的情况
-								int medianValue = _model.SquareValue[k, y];
-								_model.SquareValue[k, y] = 0;
-								_model.SquareValue[x + 1, y] = medianValue;
-								//TODO
-								break;
-							}
-						}
+						_model.SquareInfo[x, y].Value = 2 * _model.SquareInfo[x, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						isAdd = true;
+						//TODO 移动并赋值
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[k, y].DestroySquare();
+					}
+					else
+					{
+						//先将value[k,j] 的值赋给一个中间值
+						//再将value[k,j] 的值设为0（即将移动）
+						//再将value[i+1，j] 的值替换成中间值
+						//这样可以避免在k == i+1 时将值清零的情况
+						int medianValue = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						_model.SquareInfo[x + 1, y].Value = medianValue;
+						//TODO
+						SquareObj medianObj = _model.SquareInfo[k, y];
+						_model.SquareInfo[x + 1, y] = medianObj;
+						_model.SquareInfo[x + 1, y].transform.localPosition = _model.SquareInfo[x + 1, y].standardPos.localPosition;
+						break;
 					}
 				}
+			    
 			}
 		}
 
@@ -135,63 +140,69 @@ public class GameMgr : MonoBehaviour
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				if (_model.SquareValue[i,j] == 0)
+				if (_model.SquareInfo[i,j].Value == 0)
 				{
 					continue;
 				}
 
-				Debug.Log("("+ i + "," + j+"): " + _model.SquareValue[i,j]);
+				Debug.Log("("+ i + "," + j+"): " + _model.SquareInfo[i,j].Value);
 			}
 		}
 		
 	}
 
+
 	private void MoveToRight()
 	{
-		for (int j = 0; j < 4; j++)
+		for (int y = 0; y < 4; y++)
 		{
-			for (int i = 3; i >= 0; i--)
+			bool isAdd = false;
+			for (int x = 3; x >= 0; x--)
 			{
-				if (_model.SquareValue[i, j] == 0)
+				if (x == 3 && _model.SquareInfo[x, y].Value == 0)
 				{
-					for (int k = i - 1; k >= 0; k--)
+					Debug.Log("右滑第一个为0");
+					for (int k = x - 1; k >= 0; k--)
 					{
-						if (_model.SquareValue[k, j] != 0)
-						{
-							_model.SquareValue[i, j] = _model.SquareValue[k, j];
-							_model.SquareValue[k, j] = 0;
-							//TODO 修改位置,将方块移动到该位置
-							//Pk = Pi；并且移动位置
-							break;
-						}      
+						if (_model.SquareInfo[k, y].Value == 0) continue;
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						//TODO 修改位置,将方块移动到该位置
+						//Pk = Pi；并且移动位置
+						_model.SquareInfo[x, y] = _model.SquareInfo[k, y];
+						_model.SquareInfo[x, y].transform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
+						break;
 					}
 				}
 				
-				if (_model.SquareValue[i, j] != 0)
+				if (_model.SquareInfo[x, y].Value == 0) continue;
+				
+				for (int k = x - 1; k >= 0; k--)
 				{
-					for (int k = i - 1; k >= 0; k--)
+					if (_model.SquareInfo[k, y].Value == 0) continue;
+					if (_model.SquareInfo[x, y].Value == _model.SquareInfo[k, y].Value && !isAdd) //两个方块的值相等
 					{
-						if (_model.SquareValue[k, j] != 0)
-						{
-							if (_model.SquareValue[i, j] == _model.SquareValue[k, j]) //两个方块的值相等
-							{
-								_model.SquareValue[i, j] = 2 * _model.SquareValue[i, j];
-								_model.SquareValue[k, j] = 0;
-								//TODO
-								break;
-							}else if (_model.SquareValue[i, j] != _model.SquareValue[k, j])//两个方块的值不相等
-							{
-								//先将value[k,j] 的值赋给一个中间值
-								//再将value[k,j] 的值设为0（即将移动）
-								//再将value[i+1，j] 的值替换成中间值
-								//这样可以避免在k == i+1 时将值清零的情况
-								int medianValue = _model.SquareValue[k, j];
-								_model.SquareValue[k, j] = 0;
-								_model.SquareValue[i - 1, j] = medianValue;
-								//TODO
-								break;
-							}
-						}
+						_model.SquareInfo[x, y].Value = 2 * _model.SquareInfo[x, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						isAdd = true;
+						//TODO
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[k, y].DestroySquare();
+					}
+					else
+					{
+						//先将value[k,j] 的值赋给一个中间值
+						//再将value[k,j] 的值设为0（即将移动）
+						//再将value[i+1，j] 的值替换成中间值
+						//这样可以避免在k == i+1 时将值清零的情况
+						int medianValue = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[k, y].Value = 0;
+						_model.SquareInfo[x - 1, y].Value = medianValue;
+						//TODO
+						SquareObj medianObj = _model.SquareInfo[k, y];
+						_model.SquareInfo[x + 1, y] = medianObj;
+						_model.SquareInfo[x + 1, y].transform.localPosition = _model.SquareInfo[x + 1, y].standardPos.localPosition;
+						break;
 					}
 				}
 			}
@@ -201,130 +212,135 @@ public class GameMgr : MonoBehaviour
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				if (_model.SquareValue[i,j] == 0)
+				if (_model.SquareInfo[i,j].Value == 0)
 				{
 					continue;
 				}
-				Debug.Log("("+ i + "," + j+"): " + _model.SquareValue[i,j]);
+				Debug.Log("("+ i + "," + j+"): " + _model.SquareInfo[i,j].Value);
 			}
 		}
 	}
 
 	private void MoveToUp()
 	{
-		for (int j = 0; j < 4; j++)
+		for (int x = 0; x < 4; x++)
 		{
-			for (int i = 0; i < 4; i++)
+			bool isAdd = false;
+			for (int y = 0; y < 4; y++)
 			{ 
-				if (_model.SquareValue[i, j] == 0)
+				if (y == 0 && _model.SquareInfo[x, y].Value == 0)
 				{
-					for (int k = j + 1; k < 4; k++)
+					Debug.Log("上划滑第一个为0");
+					for (int k = y + 1; k < 4; k++)
 					{
-						if (_model.SquareValue[i, k] != 0)
-						{
-							_model.SquareValue[i, j] = _model.SquareValue[i, k];
-							_model.SquareValue[i, k] = 0;
-							//TODO 修改位置,将方块移动到该位置
-							//Pk = Pi；并且移动位置
-							break;
-						}      
+						if (_model.SquareInfo[x, k].Value == 0) continue;
+						_model.SquareInfo[x, y].transform = _model.SquareInfo[x, k].transform;
+						_model.SquareInfo[x, k].Value = 0;
+						//TODO 修改位置,将方块移动到该位置
+						//Pk = Pi；并且移动位置
+						_model.SquareInfo[x, y] = _model.SquareInfo[x, k];
+						_model.SquareInfo[x, y].transform.localPosition = _model.StandardPos[x, y].localPosition;
+						break;
 					}
 				}
 				
-				if (_model.SquareValue[i, j] != 0)
+				if (_model.SquareInfo[x, y].Value == 0) continue;
+				
+				for (int k = y + 1; k < 4; k++)
 				{
-					for (int k = j + 1; k < 4; k++)
+					if (_model.SquareInfo[x, k].Value == 0) continue;
+					Debug.Log("两个方块相等");
+					if (_model.SquareInfo[x, y].Value == _model.SquareInfo[x, k].Value && !isAdd) //两个方块的值相等
 					{
-						if (_model.SquareValue[k, j] != 0)
-						{
-							Debug.Log("两个方块相等");
-							if (_model.SquareValue[i, j] == _model.SquareValue[i, k]) //两个方块的值相等
-							{
-								_model.SquareValue[i, j] = 2 * _model.SquareValue[i, j];
-								_model.SquareValue[i, k] = 0;
-								//TODO
-								break;
-							}else if (_model.SquareValue[i, j] != _model.SquareValue[i, k])//两个方块的值不相等
-							{
-								//先将value[k,j] 的值赋给一个中间值
-								//再将value[k,j] 的值设为0（即将移动）
-								//再将value[i+1，j] 的值替换成中间值
-								//这样可以避免在k == i+1 时将值清零的情况
-								int medianValue = _model.SquareValue[i, k];
-								_model.SquareValue[i, k] = 0;
-								_model.SquareValue[i, j + 1] = medianValue;
-								//TODO
-								break;
-							}
-						}
-						else
-						{
-							
-						}
+						_model.SquareInfo[x, y].Value = 2 * _model.SquareInfo[x, y].Value;
+						_model.SquareInfo[x, k].Value = 0;
+						isAdd = true;
+						//TODO
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, k].DestroySquare();
 					}
-				}
+					else
+					{
+						//先将value[k,j] 的值赋给一个中间值
+						//再将value[k,j] 的值设为0（即将移动）
+						//再将value[i+1，j] 的值替换成中间值
+						//这样可以避免在k == i+1 时将值清零的情况
+						int medianValue = _model.SquareInfo[x, k].Value;
+						_model.SquareInfo[x, k].Value = 0;
+						_model.SquareInfo[x, y + 1].Value = medianValue;
+						//TODO
+						SquareObj medianObj = _model.SquareInfo[k, y];
+						_model.SquareInfo[x, y + 1] = medianObj;
+						_model.SquareInfo[x, y + 1].transform.localPosition = _model.StandardPos[x, y + 1].localPosition;
+						break;
+					}
+				}	
 			}
 		}
 		
-		for (int i = 0; i < 4; i++)
+		for (int x = 0; x < 4; x++)
 		{
-			for (int j = 0; j < 4; j++)
+			for (int y = 0; y < 4; y++)
 			{
-				if (_model.SquareValue[i,j] == 0)
+				if (_model.SquareInfo[x,y].Value == 0)
 				{
 					continue;
 				}
-				Debug.Log("("+ i + "," + j+"): " + _model.SquareValue[i,j]);
+				Debug.Log("("+ x + "," + y+"): " + _model.SquareInfo[x,y].Value);
 			}
 		}
 	}
 
 	private void MoveToDown()
 	{
-		for (int i = 0; i < 4; i++)
+		for (int x = 0; x < 4; x++)
 		{
-			for (int j = 3; j >= 0; j--)
+			bool isAdd = false;
+			for (int y = 3; y >= 0; y--)
 			{
-				if (_model.SquareValue[i, j] == 0)
+				if (y == 3 && _model.SquareInfo[x, y].Value == 0)
 				{
-					for (int k = j - 1; k >= 0; k--)
+					Debug.Log("下划滑第一个为0");
+					for (int k = y - 1; k >= 0; k--)
 					{
-						if (_model.SquareValue[i, k] != 0)
-						{
-							_model.SquareValue[i, j] = _model.SquareValue[i, k];
-							_model.SquareValue[i, k] = 0;
-							//TODO 修改位置,将方块移动到该位置
-							//Pk = Pi；并且移动位置
-							break;
-						}      
+						if (_model.SquareInfo[x, k].Value == 0) continue;
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, k].Value;
+						_model.SquareInfo[x, k].Value = 0;
+						//TODO 修改位置,将方块移动到该位置
+						//Pk = Pi；并且移动位置
+						_model.SquareInfo[x, y] = _model.SquareInfo[x, k];
+						_model.SquareInfo[x, y].transform.localPosition = _model.StandardPos[x, y].localPosition;
+						break;      
 					}
 				}
 				
-				if (_model.SquareValue[i, j] != 0)
+				if (_model.SquareInfo[x, y].Value == 0) continue;
+				for (int k = y - 1; k >= 0; k--)
 				{
-					for (int k = j - 1; k >= 0; k--)
+					if (_model.SquareInfo[x, k].Value == 0) continue;
+					if (_model.SquareInfo[x, y].Value == _model.SquareInfo[x, k].Value && !isAdd) //两个方块的值相等
 					{
-						if (_model.SquareValue[k, j] != 0)
-						{
-							if (_model.SquareValue[i, j] == _model.SquareValue[i, k]) //两个方块的值相等
-							{
-								_model.SquareValue[i, j] = 2 * _model.SquareValue[i, j];
-								_model.SquareValue[i, k] = 0;
-								//TODO
-								break;
-							}else if (_model.SquareValue[i, j] != _model.SquareValue[i, k])//两个方块的值不相等
-							{
-								//先将value[k,j] 的值赋给一个中间值
-								//再将value[k,j] 的值设为0（即将移动）
-								//再将value[i+1，j] 的值替换成中间值
-								//这样可以避免在k == i+1 时将值清零的情况
-								int medianValue = _model.SquareValue[i, k];
-								_model.SquareValue[i, k] = 0;
-								_model.SquareValue[i, j - 1] = medianValue;
-								//TODO
-								break;
-							}
-						}
+						_model.SquareInfo[x, y].Value = 2 * _model.SquareInfo[x, y].Value;
+						_model.SquareInfo[x, k].Value = 0;
+						isAdd = true;
+						//TODO
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, k].DestroySquare();
+					}
+					else
+					{
+						//先将value[k,j] 的值赋给一个中间值
+						//再将value[k,j] 的值设为0（即将移动）
+						//再将value[i+1，j] 的值替换成中间值
+						//这样可以避免在k == i+1 时将值清零的情况
+						int medianValue = _model.SquareInfo[x, k].Value;
+						_model.SquareInfo[x, k].Value = 0;
+						_model.SquareInfo[x, y - 1].Value = medianValue;
+						//TODO
+						SquareObj medianObj = _model.SquareInfo[k, y];
+						_model.SquareInfo[x, y - 1] = medianObj;
+						_model.SquareInfo[x, y - 1].transform.localPosition = _model.StandardPos[x, y - 1].localPosition;
+						break;
 					}
 				}
 			}
@@ -334,11 +350,11 @@ public class GameMgr : MonoBehaviour
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				if (_model.SquareValue[i,j] == 0)
+				if (_model.SquareInfo[i,j].Value == 0)
 				{
 					continue;
 				}
-				Debug.Log("("+ i + "," + j+"): " + _model.SquareValue[i,j]);
+				Debug.Log("("+ i + "," + j+"): " + _model.SquareInfo[i,j].Value);
 			}
 		}
 	}

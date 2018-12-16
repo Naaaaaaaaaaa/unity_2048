@@ -38,27 +38,11 @@ public class Model : MonoBehaviour
 	/// <summary>
 	/// 存储标准的方块坐标数据
 	/// </summary>
-	public Vector3[,] StandardPos = new Vector3[4,4];
+	public Transform[,] StandardPos = new Transform[4,4];
 	/// <summary>
 	/// 存储方块信息数据：坐标， 值
 	/// </summary>
-	public SquareObj[,] SquareInfo = new SquareObj[4,4]
-	{
-		{null, null, null, null},
-		{null, null, null, null},
-		{null, null, null, null},
-		{null, null, null, null}
-	};
-	/// <summary>
-	/// 存储方块值信息数据
-	/// </summary>
-	public int[,] SquareValue = new int[4,4]
-	{
-		{0, 0, 0, 0},
-		{0, 0, 0, 0},
-		{0, 0, 0, 0},
-		{0, 0, 0, 0}
-	};
+	public SquareObj[,] SquareInfo = new SquareObj[4,4];
 
 	private void Awake()
 	{

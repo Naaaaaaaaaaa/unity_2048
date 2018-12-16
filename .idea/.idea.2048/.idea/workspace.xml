@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99c26730-3acc-4ce9-9fb2-9a0222b51c7f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ctrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ctrl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SquareObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SquareObj.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,30 +19,32 @@
     <session id="-1181018492">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="6" />
+          <entry key="cs" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="6" />
+          <entry key="C#" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="4266" />
+          <entry key="cs" value="5869" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4266" />
+          <entry key="C#" value="5869" />
         </counts>
       </usages-collector>
     </session>
@@ -47,91 +54,77 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameMgr.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4231">
-              <caret line="302" column="50" lean-forward="true" selection-start-line="302" selection-start-column="50" selection-end-line="302" selection-end-column="50" />
+            <state relative-caret-position="279">
+              <caret line="203" column="117" selection-start-line="203" selection-start-column="117" selection-end-line="203" selection-end-column="117" />
               <folding>
-                <marker date="1544931773025" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-                <marker date="1544931773025" expanded="false" signature="322:394" ph="..." />
-                <marker date="1544931773025" expanded="true" signature="432:7259" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="547:700" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="755:1029" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="797:820" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="863:888" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="931:956" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1000:1026" ph="{...}" />
-                <marker date="1544931773025" expanded="false" signature="1032:1340" ph="初始化游戏" />
-                <marker date="1544931773025" expanded="true" signature="1047:1117" ph="/// 获取Root节点下所有子节点的坐标 ... " />
-                <marker date="1544931773025" expanded="true" signature="1144:1190" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1193:1234" ph="/// 生成三个方块 ... " />
-                <marker date="1544931773025" expanded="true" signature="1258:1326" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1291:1323" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1343:7257" ph="方块移动" />
-                <marker date="1544931773025" expanded="true" signature="1357:1396" ph="/// 向左移动 ... " />
-                <marker date="1544931773025" expanded="true" signature="1423:2842" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1456:2625" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1491:2621" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1535:1825" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1578:1819" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1626:1806" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1739:1784" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-                <marker date="1544931773025" expanded="true" signature="1869:2616" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1912:2610" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="1960:2603" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2044:2195" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2268:2595" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2286:2414" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-                <marker date="1544931773025" expanded="true" signature="2656:2836" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2691:2832" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2734:2761" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2871:4289" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2904:4076" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2940:4072" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="2984:3275" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3028:3269" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3076:3256" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3189:3234" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-                <marker date="1544931773025" expanded="true" signature="3319:4067" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3363:4061" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3411:4054" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3495:3646" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3719:4046" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="3737:3865" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-                <marker date="1544931773025" expanded="true" signature="4107:4286" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4142:4282" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4185:4212" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4315:5796" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4348:5581" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4383:5577" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4428:4718" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4471:4712" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4519:4699" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4632:4677" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-                <marker date="1544931773025" expanded="true" signature="4762:5572" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4805:5566" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4853:5524" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="4965:5116" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5189:5516" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5207:5335" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-                <marker date="1544931773025" expanded="true" signature="5535:5559" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5614:5793" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5649:5789" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5692:5719" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5824:7244" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5857:7029" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5893:7025" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5937:6228" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="5981:6222" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6029:6209" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6142:6187" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-                <marker date="1544931773025" expanded="true" signature="6272:7020" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6316:7014" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6364:7007" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6448:6599" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6672:6999" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="6690:6818" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-                <marker date="1544931773025" expanded="true" signature="7062:7241" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="7097:7237" ph="{...}" />
-                <marker date="1544931773025" expanded="true" signature="7140:7167" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+                <marker date="1544955740847" expanded="true" signature="321:393" ph="..." />
+                <marker date="1544955740847" expanded="true" signature="431:9355" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="546:699" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="754:1028" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="796:819" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="862:887" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="930:955" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="999:1025" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1031:1339" ph="初始化游戏" />
+                <marker date="1544955740847" expanded="true" signature="1046:1116" ph="/// 获取Root节点下所有子节点的坐标 ... " />
+                <marker date="1544955740847" expanded="true" signature="1143:1189" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1192:1233" ph="/// 生成三个方块 ... " />
+                <marker date="1544955740847" expanded="true" signature="1257:1325" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1290:1322" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1342:9353" ph="方块移动" />
+                <marker date="1544955740847" expanded="true" signature="1356:1395" ph="/// 向左移动 ... " />
+                <marker date="1544955740847" expanded="true" signature="1422:3392" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1455:3165" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1513:3161" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1572:2056" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="1642:2050" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="2155:3148" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="2310:2597" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="2607:3142" ph="{...}" />
+                <marker date="1544955740847" expanded="false" signature="2621:2743" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+                <marker date="1544955740847" expanded="true" signature="3196:3386" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3231:3382" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3279:3306" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3422:5378" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3455:5155" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3514:5151" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3573:4058" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3644:4052" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="3824:3868" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+                <marker date="1544955740847" expanded="true" signature="4159:5146" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="4314:4595" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="4605:5140" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="4619:4741" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+                <marker date="1544955740847" expanded="true" signature="5186:5375" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5221:5371" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5269:5296" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5404:7374" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5437:7149" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5495:7145" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5555:6037" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5626:6031" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="5814:5858" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+                <marker date="1544955740847" expanded="true" signature="6137:7139" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="6318:6599" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="6609:7133" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="6623:6745" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+                <marker date="1544955740847" expanded="true" signature="7182:7371" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7217:7367" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7265:7292" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7402:9340" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7435:9115" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7494:9111" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7553:8034" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7625:8028" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="7805:7849" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+                <marker date="1544955740847" expanded="true" signature="8130:9106" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="8285:8566" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="8576:9100" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="8590:8712" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+                <marker date="1544955740847" expanded="true" signature="9148:9337" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="9183:9333" ph="{...}" />
+                <marker date="1544955740847" expanded="true" signature="9231:9258" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -140,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/View.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="55">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <marker date="1544860779503" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
                 <marker date="1544860779503" expanded="false" signature="322:426" ph="..." />
@@ -154,51 +147,49 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Ctrl.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+            <state relative-caret-position="141">
+              <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding>
-                <marker date="1544864160973" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-                <marker date="1544864160973" expanded="false" signature="322:394" ph="..." />
-                <marker date="1544864160973" expanded="true" signature="429:2371" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="561:585" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="634:641" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="696:703" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="707:836" ph="/// 获取View中Root所有的标准坐标数值,并将坐标存储在Model的StandardPos二维数组中 ... " />
-                <marker date="1544864160973" expanded="true" signature="884:1139" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="958:1136" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1142:1183" ph="/// 生成所有方块 ... " />
-                <marker date="1544864160973" expanded="false" signature="1213:1517" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1271:1514" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1306:1510" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1520:1561" ph="/// 生成一个方块 ... " />
-                <marker date="1544864160973" expanded="true" signature="1588:2369" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1744:1810" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="1877:1978" ph="{...}" />
-                <marker date="1544864160973" expanded="true" signature="2001:2096" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+                <marker date="1544956088760" expanded="false" signature="322:394" ph="..." />
+                <marker date="1544956088760" expanded="true" signature="429:2849" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="561:585" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="634:641" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="696:703" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="707:836" ph="/// 获取View中Root所有的标准坐标数值,并将坐标存储在Model的StandardPos二维数组中 ... " />
+                <marker date="1544956088760" expanded="true" signature="884:1465" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="958:1288" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="1290:1462" ph="/* for (int y = 0; y &lt; 4; y++) ... */" />
+                <marker date="1544956088760" expanded="true" signature="1468:1509" ph="/// 生成所有方块 ... " />
+                <marker date="1544956088760" expanded="true" signature="1539:1857" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="1597:1854" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="1632:1850" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="1860:1901" ph="/// 生成一个方块 ... " />
+                <marker date="1544956088760" expanded="true" signature="1928:2847" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="2084:2150" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="2217:2318" ph="{...}" />
+                <marker date="1544956088760" expanded="true" signature="2341:2436" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+            <state relative-caret-position="264">
+              <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
               <folding>
-                <marker date="1544860190208" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-                <marker date="1544860190208" expanded="false" signature="322:427" ph="..." />
-                <marker date="1544860190208" expanded="true" signature="463:1632" ph="{...}" />
-                <marker date="1544860190208" expanded="true" signature="1048:1094" ph="/// 存储标准的方块坐标数据 ... " />
-                <marker date="1544860190208" expanded="true" signature="1147:1196" ph="/// 存储方块信息数据：坐标， 值 ... " />
-                <marker date="1544860190208" expanded="true" signature="1251:1366" ph="{...}" />
-                <marker date="1544860190208" expanded="true" signature="1369:1413" ph="/// 存储方块值信息数据 ... " />
-                <marker date="1544860190208" expanded="true" signature="1457:1524" ph="{...}" />
-                <marker date="1544860190208" expanded="true" signature="1548:1573" ph="{...}" />
-                <marker date="1544860190208" expanded="true" signature="1622:1629" ph="{...}" />
+                <marker date="1544954271491" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+                <marker date="1544954271491" expanded="false" signature="322:427" ph="..." />
+                <marker date="1544954271491" expanded="true" signature="463:1361" ph="{...}" />
+                <marker date="1544954271491" expanded="true" signature="1048:1094" ph="/// 存储标准的方块坐标数据 ... " />
+                <marker date="1544954271491" expanded="true" signature="1151:1200" ph="/// 存储方块信息数据：坐标， 值 ... " />
+                <marker date="1544954271491" expanded="true" signature="1277:1302" ph="{...}" />
+                <marker date="1544954271491" expanded="true" signature="1351:1358" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -207,13 +198,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/SquareObj.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="94">
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="20" />
               <folding>
-                <marker date="1544859675736" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-                <marker date="1544859675736" expanded="false" signature="322:394" ph="..." />
-                <marker date="1544859675736" expanded="true" signature="418:595" ph="{...}" />
-                <marker date="1544859675736" expanded="true" signature="526:593" ph="{...}" />
+                <marker date="1544954953227" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+                <marker date="1544954953227" expanded="true" signature="322:421" ph="..." />
+                <marker date="1544954953227" expanded="true" signature="445:1080" ph="{...}" />
+                <marker date="1544954953227" expanded="true" signature="484:529" ph="/// 标准坐标 ... " />
+                <marker date="1544954953227" expanded="true" signature="608:800" ph="{...}" />
+                <marker date="1544954953227" expanded="true" signature="662:794" ph="{...}" />
+                <marker date="1544954953227" expanded="true" signature="872:983" ph="{...}" />
+                <marker date="1544954953227" expanded="true" signature="1016:1078" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -222,7 +217,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="298">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
               <folding>
                 <marker date="1544862394575" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
                 <marker date="1544862394575" expanded="false" signature="322:394" ph="..." />
@@ -242,6 +238,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMgr.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/A计划/2048/siki学院公开课第004期-豪华版2048开发/工程素材/2048/Assets/Daikon Forge/Examples/Scripts/PlatformVisibility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/View.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SquareObj.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model.cs" root0="FORCE_HIGHLIGHTING" />
@@ -251,12 +248,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/SquareObj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/View.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Global.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ctrl.cs" />
+        <option value="E:/A计划/2048/siki学院公开课第004期-豪华版2048开发/工程素材/2048/Assets/Daikon Forge/Examples/Scripts/PlatformVisibility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SquareObj.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMgr.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ctrl.cs" />
       </list>
     </option>
   </component>
@@ -310,9 +308,9 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10916">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="5768">
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10916" />
+      <option name="pid" value="5768" />
       <method v="2" />
     </configuration>
     <list>
@@ -331,12 +329,14 @@
       <option name="presentableId" value="Default" />
       <updated>1544853993064</updated>
       <workItem from="1544854005014" duration="21331000" />
-      <workItem from="1544931267699" duration="759000" />
+      <workItem from="1544931267699" duration="3846000" />
+      <workItem from="1544935759318" duration="127000" />
+      <workItem from="1544935986475" duration="15475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22090000" />
+    <option name="totallyTimeSpent" value="40779000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,16 +348,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39901477" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39901477" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -397,142 +397,17 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Global.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameMgr.cs">
+    <entry file="file://E:/A计划/2048/siki学院公开课第004期-豪华版2048开发/工程素材/2048/Assets/Daikon Forge/Examples/Scripts/PlatformVisibility.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4231">
-          <caret line="302" column="50" lean-forward="true" selection-start-line="302" selection-start-column="50" selection-end-line="302" selection-end-column="50" />
-          <folding>
-            <marker date="1544931773025" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-            <marker date="1544931773025" expanded="false" signature="322:394" ph="..." />
-            <marker date="1544931773025" expanded="true" signature="432:7259" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="547:700" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="755:1029" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="797:820" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="863:888" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="931:956" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1000:1026" ph="{...}" />
-            <marker date="1544931773025" expanded="false" signature="1032:1340" ph="初始化游戏" />
-            <marker date="1544931773025" expanded="true" signature="1047:1117" ph="/// 获取Root节点下所有子节点的坐标 ... " />
-            <marker date="1544931773025" expanded="true" signature="1144:1190" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1193:1234" ph="/// 生成三个方块 ... " />
-            <marker date="1544931773025" expanded="true" signature="1258:1326" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1291:1323" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1343:7257" ph="方块移动" />
-            <marker date="1544931773025" expanded="true" signature="1357:1396" ph="/// 向左移动 ... " />
-            <marker date="1544931773025" expanded="true" signature="1423:2842" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1456:2625" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1491:2621" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1535:1825" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1578:1819" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1626:1806" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1739:1784" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-            <marker date="1544931773025" expanded="true" signature="1869:2616" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1912:2610" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="1960:2603" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2044:2195" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2268:2595" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2286:2414" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-            <marker date="1544931773025" expanded="true" signature="2656:2836" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2691:2832" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2734:2761" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2871:4289" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2904:4076" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2940:4072" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="2984:3275" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3028:3269" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3076:3256" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3189:3234" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-            <marker date="1544931773025" expanded="true" signature="3319:4067" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3363:4061" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3411:4054" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3495:3646" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3719:4046" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="3737:3865" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-            <marker date="1544931773025" expanded="true" signature="4107:4286" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4142:4282" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4185:4212" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4315:5796" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4348:5581" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4383:5577" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4428:4718" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4471:4712" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4519:4699" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4632:4677" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-            <marker date="1544931773025" expanded="true" signature="4762:5572" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4805:5566" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4853:5524" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="4965:5116" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5189:5516" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5207:5335" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-            <marker date="1544931773025" expanded="true" signature="5535:5559" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5614:5793" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5649:5789" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5692:5719" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5824:7244" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5857:7029" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5893:7025" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5937:6228" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="5981:6222" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6029:6209" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6142:6187" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
-            <marker date="1544931773025" expanded="true" signature="6272:7020" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6316:7014" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6364:7007" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6448:6599" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6672:6999" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="6690:6818" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
-            <marker date="1544931773025" expanded="true" signature="7062:7241" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="7097:7237" ph="{...}" />
-            <marker date="1544931773025" expanded="true" signature="7140:7167" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <marker date="1544860779503" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-            <marker date="1544860779503" expanded="false" signature="322:426" ph="..." />
-            <marker date="1544860779503" expanded="true" signature="461:908" ph="{...}" />
-            <marker date="1544860779503" expanded="true" signature="614:763" ph="{...}" />
-            <marker date="1544860779503" expanded="true" signature="766:815" ph="/// 获取Root所有子节点的坐标 ... " />
-            <marker date="1544860779503" expanded="true" signature="842:906" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Ctrl.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
-          <folding>
-            <marker date="1544864160973" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-            <marker date="1544864160973" expanded="false" signature="322:394" ph="..." />
-            <marker date="1544864160973" expanded="true" signature="429:2371" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="561:585" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="634:641" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="696:703" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="707:836" ph="/// 获取View中Root所有的标准坐标数值,并将坐标存储在Model的StandardPos二维数组中 ... " />
-            <marker date="1544864160973" expanded="true" signature="884:1139" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="958:1136" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1142:1183" ph="/// 生成所有方块 ... " />
-            <marker date="1544864160973" expanded="false" signature="1213:1517" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1271:1514" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1306:1510" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1520:1561" ph="/// 生成一个方块 ... " />
-            <marker date="1544864160973" expanded="true" signature="1588:2369" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1744:1810" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="1877:1978" ph="{...}" />
-            <marker date="1544864160973" expanded="true" signature="2001:2096" ph="{...}" />
-          </folding>
+        <state relative-caret-position="251">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/GlobalData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="298">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
             <marker date="1544862394575" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
             <marker date="1544862394575" expanded="false" signature="322:394" ph="..." />
@@ -544,34 +419,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SquareObj.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/View.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="55">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
-            <marker date="1544859675736" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-            <marker date="1544859675736" expanded="false" signature="322:394" ph="..." />
-            <marker date="1544859675736" expanded="true" signature="418:595" ph="{...}" />
-            <marker date="1544859675736" expanded="true" signature="526:593" ph="{...}" />
+            <marker date="1544860779503" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+            <marker date="1544860779503" expanded="false" signature="322:426" ph="..." />
+            <marker date="1544860779503" expanded="true" signature="461:908" ph="{...}" />
+            <marker date="1544860779503" expanded="true" signature="614:763" ph="{...}" />
+            <marker date="1544860779503" expanded="true" signature="766:815" ph="/// 获取Root所有子节点的坐标 ... " />
+            <marker date="1544860779503" expanded="true" signature="842:906" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameMgr.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="203" column="117" selection-start-line="203" selection-start-column="117" selection-end-line="203" selection-end-column="117" />
+          <folding>
+            <marker date="1544955740847" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+            <marker date="1544955740847" expanded="true" signature="321:393" ph="..." />
+            <marker date="1544955740847" expanded="true" signature="431:9355" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="546:699" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="754:1028" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="796:819" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="862:887" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="930:955" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="999:1025" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1031:1339" ph="初始化游戏" />
+            <marker date="1544955740847" expanded="true" signature="1046:1116" ph="/// 获取Root节点下所有子节点的坐标 ... " />
+            <marker date="1544955740847" expanded="true" signature="1143:1189" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1192:1233" ph="/// 生成三个方块 ... " />
+            <marker date="1544955740847" expanded="true" signature="1257:1325" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1290:1322" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1342:9353" ph="方块移动" />
+            <marker date="1544955740847" expanded="true" signature="1356:1395" ph="/// 向左移动 ... " />
+            <marker date="1544955740847" expanded="true" signature="1422:3392" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1455:3165" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1513:3161" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1572:2056" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="1642:2050" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="2155:3148" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="2310:2597" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="2607:3142" ph="{...}" />
+            <marker date="1544955740847" expanded="false" signature="2621:2743" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+            <marker date="1544955740847" expanded="true" signature="3196:3386" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3231:3382" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3279:3306" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3422:5378" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3455:5155" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3514:5151" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3573:4058" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3644:4052" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="3824:3868" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+            <marker date="1544955740847" expanded="true" signature="4159:5146" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="4314:4595" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="4605:5140" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="4619:4741" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+            <marker date="1544955740847" expanded="true" signature="5186:5375" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5221:5371" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5269:5296" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5404:7374" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5437:7149" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5495:7145" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5555:6037" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5626:6031" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="5814:5858" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+            <marker date="1544955740847" expanded="true" signature="6137:7139" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="6318:6599" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="6609:7133" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="6623:6745" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+            <marker date="1544955740847" expanded="true" signature="7182:7371" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7217:7367" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7265:7292" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7402:9340" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7435:9115" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7494:9111" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7553:8034" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7625:8028" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="7805:7849" ph="/* TODO 修改位置,将方块移动到该位置 ... */" />
+            <marker date="1544955740847" expanded="true" signature="8130:9106" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="8285:8566" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="8576:9100" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="8590:8712" ph="/* 先将value[k,j] 的值赋给一个中间值 ... */" />
+            <marker date="1544955740847" expanded="true" signature="9148:9337" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="9183:9333" ph="{...}" />
+            <marker date="1544955740847" expanded="true" signature="9231:9258" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Model.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="264">
+          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
           <folding>
-            <marker date="1544860190208" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
-            <marker date="1544860190208" expanded="false" signature="322:427" ph="..." />
-            <marker date="1544860190208" expanded="true" signature="463:1632" ph="{...}" />
-            <marker date="1544860190208" expanded="true" signature="1048:1094" ph="/// 存储标准的方块坐标数据 ... " />
-            <marker date="1544860190208" expanded="true" signature="1147:1196" ph="/// 存储方块信息数据：坐标， 值 ... " />
-            <marker date="1544860190208" expanded="true" signature="1251:1366" ph="{...}" />
-            <marker date="1544860190208" expanded="true" signature="1369:1413" ph="/// 存储方块值信息数据 ... " />
-            <marker date="1544860190208" expanded="true" signature="1457:1524" ph="{...}" />
-            <marker date="1544860190208" expanded="true" signature="1548:1573" ph="{...}" />
-            <marker date="1544860190208" expanded="true" signature="1622:1629" ph="{...}" />
+            <marker date="1544954271491" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+            <marker date="1544954271491" expanded="false" signature="322:427" ph="..." />
+            <marker date="1544954271491" expanded="true" signature="463:1361" ph="{...}" />
+            <marker date="1544954271491" expanded="true" signature="1048:1094" ph="/// 存储标准的方块坐标数据 ... " />
+            <marker date="1544954271491" expanded="true" signature="1151:1200" ph="/// 存储方块信息数据：坐标， 值 ... " />
+            <marker date="1544954271491" expanded="true" signature="1277:1302" ph="{...}" />
+            <marker date="1544954271491" expanded="true" signature="1351:1358" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SquareObj.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <marker date="1544954953227" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+            <marker date="1544954953227" expanded="true" signature="322:421" ph="..." />
+            <marker date="1544954953227" expanded="true" signature="445:1080" ph="{...}" />
+            <marker date="1544954953227" expanded="true" signature="484:529" ph="/// 标准坐标 ... " />
+            <marker date="1544954953227" expanded="true" signature="608:800" ph="{...}" />
+            <marker date="1544954953227" expanded="true" signature="662:794" ph="{...}" />
+            <marker date="1544954953227" expanded="true" signature="872:983" ph="{...}" />
+            <marker date="1544954953227" expanded="true" signature="1016:1078" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Ctrl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding>
+            <marker date="1544956088760" expanded="true" signature="0:314" ph="/* ==================================== ... */" />
+            <marker date="1544956088760" expanded="false" signature="322:394" ph="..." />
+            <marker date="1544956088760" expanded="true" signature="429:2849" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="561:585" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="634:641" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="696:703" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="707:836" ph="/// 获取View中Root所有的标准坐标数值,并将坐标存储在Model的StandardPos二维数组中 ... " />
+            <marker date="1544956088760" expanded="true" signature="884:1465" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="958:1288" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="1290:1462" ph="/* for (int y = 0; y &lt; 4; y++) ... */" />
+            <marker date="1544956088760" expanded="true" signature="1468:1509" ph="/// 生成所有方块 ... " />
+            <marker date="1544956088760" expanded="true" signature="1539:1857" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="1597:1854" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="1632:1850" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="1860:1901" ph="/// 生成一个方块 ... " />
+            <marker date="1544956088760" expanded="true" signature="1928:2847" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="2084:2150" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="2217:2318" ph="{...}" />
+            <marker date="1544956088760" expanded="true" signature="2341:2436" ph="{...}" />
           </folding>
         </state>
       </provider>
