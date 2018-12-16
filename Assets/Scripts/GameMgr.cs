@@ -12,6 +12,8 @@
 ======================================**/
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting;
+using TMPro;
 using UnityEngine;
 
 public class GameMgr : MonoBehaviour
@@ -27,8 +29,12 @@ public class GameMgr : MonoBehaviour
 		
 		//获取并存储标准坐标
 		GetAllRootChildren();
-		//生成初始方块
-		SpwanInitSquare();
+
+		for (int l = 0; l < 3; l++)
+		{
+			//生成初始方块
+			SpwanInitSquare();
+		}
 	}
 	
 	// Update is called once per frame
@@ -36,18 +42,22 @@ public class GameMgr : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			MoveToUp();
+			SpwanInitSquare();
 		}
 		if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			MoveToDown();
+			SpwanInitSquare();
 		}
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
 		{
 			MoveToLeft();
+			SpwanInitSquare();
 		}
 		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			MoveToRight();
+			SpwanInitSquare();
 		}
 	}
 
@@ -66,10 +76,7 @@ public class GameMgr : MonoBehaviour
 	/// </summary>
 	void SpwanInitSquare()
 	{
-		for (int i = 0; i < 3; i++)
-		{
 			_ctrl.SpwanSquare();
-		}
 	}
 
 
@@ -95,8 +102,9 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[x, y].Value = _model.SquareInfo[k, y].Value;
 						_model.SquareInfo[k, y].Value = 0;
 						//TODO 修改位置,将方块移动到该位置
-						_model.SquareInfo[x, y] = _model.SquareInfo[k, y];
-						_model.SquareInfo[x, y].transform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[k, y].UItranTransform;
+						_model.SquareInfo[k, y].UItranTransform = null;
+						_model.SquareInfo[x, y].UItranTransform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
 						//Pk = Pi；并且移动位置
 						break;
 					}
@@ -113,8 +121,10 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[k, y].Value = 0;
 						isAdd = true;
 						//TODO 移动并赋值
-						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, y].UItranTransform;
 						_model.SquareInfo[k, y].DestroySquare();
+						_model.SquareInfo[x, y].UItranTransform.GetComponentInChildren<TMP_Text>().text =
+							"" + _model.SquareInfo[x, y].Value;
 					}
 					else
 					{
@@ -122,13 +132,16 @@ public class GameMgr : MonoBehaviour
 						//再将value[k,j] 的值设为0（即将移动）
 						//再将value[i+1，j] 的值替换成中间值
 						//这样可以避免在k == i+1 时将值清零的情况
-						int medianValue = _model.SquareInfo[k, y].Value;
+//						SquareObj medianObj = new SquareObj(_model.SquareInfo[k, y].transform, _model.SquareInfo[k, y].Value, _model.SquareInfo[k, y].standardPos);
+//						_model.SquareInfo[k, y].Value = 0;
+//						_model.SquareInfo[k, y].transform = null;
+						if (k == x + 1) continue;
+						_model.SquareInfo[x + 1, y].Value = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[x + 1, y].UItranTransform = _model.SquareInfo[k, y].UItranTransform;
+						_model.SquareInfo[x + 1, y].UItranTransform.localPosition = _model.SquareInfo[x + 1, y].standardPos.localPosition;
+
 						_model.SquareInfo[k, y].Value = 0;
-						_model.SquareInfo[x + 1, y].Value = medianValue;
-						//TODO
-						SquareObj medianObj = _model.SquareInfo[k, y];
-						_model.SquareInfo[x + 1, y] = medianObj;
-						_model.SquareInfo[x + 1, y].transform.localPosition = _model.SquareInfo[x + 1, y].standardPos.localPosition;
+						_model.SquareInfo[k, y].UItranTransform = null;
 						break;
 					}
 				}
@@ -168,9 +181,9 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[x, y].Value = _model.SquareInfo[k, y].Value;
 						_model.SquareInfo[k, y].Value = 0;
 						//TODO 修改位置,将方块移动到该位置
-						//Pk = Pi；并且移动位置
-						_model.SquareInfo[x, y] = _model.SquareInfo[k, y];
-						_model.SquareInfo[x, y].transform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[k, y].UItranTransform;
+						_model.SquareInfo[k, y].UItranTransform = null;
+						_model.SquareInfo[x, y].UItranTransform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
 						break;
 					}
 				}
@@ -186,8 +199,10 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[k, y].Value = 0;
 						isAdd = true;
 						//TODO
-						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, y].UItranTransform;
 						_model.SquareInfo[k, y].DestroySquare();
+						_model.SquareInfo[x, y].UItranTransform.GetComponentInChildren<TMP_Text>().text =
+							"" + _model.SquareInfo[x, y].Value;
 					}
 					else
 					{
@@ -195,13 +210,15 @@ public class GameMgr : MonoBehaviour
 						//再将value[k,j] 的值设为0（即将移动）
 						//再将value[i+1，j] 的值替换成中间值
 						//这样可以避免在k == i+1 时将值清零的情况
-						int medianValue = _model.SquareInfo[k, y].Value;
+//						SquareObj medianObj = new SquareObj(_model.SquareInfo[k, y].transform, _model.SquareInfo[k, y].Value, _model.SquareInfo[k, y].standardPos);
+						if (k == x - 1) continue;
+						
+						_model.SquareInfo[x - 1, y].Value = _model.SquareInfo[k, y].Value;
+						_model.SquareInfo[x - 1, y].UItranTransform = _model.SquareInfo[k, y].UItranTransform;
+						_model.SquareInfo[x - 1, y].UItranTransform.localPosition = _model.SquareInfo[x - 1, y].standardPos.localPosition;
+						
 						_model.SquareInfo[k, y].Value = 0;
-						_model.SquareInfo[x - 1, y].Value = medianValue;
-						//TODO
-						SquareObj medianObj = _model.SquareInfo[k, y];
-						_model.SquareInfo[x + 1, y] = medianObj;
-						_model.SquareInfo[x + 1, y].transform.localPosition = _model.SquareInfo[x + 1, y].standardPos.localPosition;
+						_model.SquareInfo[k, y].UItranTransform = null;
 						break;
 					}
 				}
@@ -234,12 +251,13 @@ public class GameMgr : MonoBehaviour
 					for (int k = y + 1; k < 4; k++)
 					{
 						if (_model.SquareInfo[x, k].Value == 0) continue;
-						_model.SquareInfo[x, y].transform = _model.SquareInfo[x, k].transform;
-						_model.SquareInfo[x, k].Value = 0;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, k].UItranTransform;
+						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, k].Value;
 						//TODO 修改位置,将方块移动到该位置
 						//Pk = Pi；并且移动位置
-						_model.SquareInfo[x, y] = _model.SquareInfo[x, k];
-						_model.SquareInfo[x, y].transform.localPosition = _model.StandardPos[x, y].localPosition;
+						_model.SquareInfo[x, k].UItranTransform = null;
+						_model.SquareInfo[x, k].Value = 0;
+						_model.SquareInfo[x, y].UItranTransform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
 						break;
 					}
 				}
@@ -256,8 +274,10 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[x, k].Value = 0;
 						isAdd = true;
 						//TODO
-						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, y].UItranTransform;
 						_model.SquareInfo[x, k].DestroySquare();
+						_model.SquareInfo[x, y].UItranTransform.GetComponentInChildren<TMP_Text>().text =
+							"" + _model.SquareInfo[x, y].Value;
 					}
 					else
 					{
@@ -265,13 +285,14 @@ public class GameMgr : MonoBehaviour
 						//再将value[k,j] 的值设为0（即将移动）
 						//再将value[i+1，j] 的值替换成中间值
 						//这样可以避免在k == i+1 时将值清零的情况
-						int medianValue = _model.SquareInfo[x, k].Value;
+//						SquareObj medianObj = new SquareObj(_model.SquareInfo[x, k].transform, _model.SquareInfo[x, k].Value, _model.SquareInfo[x, k].standardPos);
+						if (y + 1 == k)	continue;
+						_model.SquareInfo[x, y + 1].Value = _model.SquareInfo[x, k].Value;
+						_model.SquareInfo[x, y + 1].UItranTransform = _model.SquareInfo[x, k].UItranTransform;
+						_model.SquareInfo[x, y + 1].UItranTransform.localPosition = _model.SquareInfo[x, y + 1].standardPos.localPosition;
+						
 						_model.SquareInfo[x, k].Value = 0;
-						_model.SquareInfo[x, y + 1].Value = medianValue;
-						//TODO
-						SquareObj medianObj = _model.SquareInfo[k, y];
-						_model.SquareInfo[x, y + 1] = medianObj;
-						_model.SquareInfo[x, y + 1].transform.localPosition = _model.StandardPos[x, y + 1].localPosition;
+						_model.SquareInfo[x, k].UItranTransform = null;
 						break;
 					}
 				}	
@@ -304,12 +325,13 @@ public class GameMgr : MonoBehaviour
 					for (int k = y - 1; k >= 0; k--)
 					{
 						if (_model.SquareInfo[x, k].Value == 0) continue;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, k].UItranTransform;
 						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, k].Value;
-						_model.SquareInfo[x, k].Value = 0;
 						//TODO 修改位置,将方块移动到该位置
 						//Pk = Pi；并且移动位置
-						_model.SquareInfo[x, y] = _model.SquareInfo[x, k];
-						_model.SquareInfo[x, y].transform.localPosition = _model.StandardPos[x, y].localPosition;
+						_model.SquareInfo[x, k].UItranTransform = null;
+						_model.SquareInfo[x, k].Value = 0;
+						_model.SquareInfo[x, y].UItranTransform.localPosition = _model.SquareInfo[x, y].standardPos.localPosition;
 						break;      
 					}
 				}
@@ -324,8 +346,10 @@ public class GameMgr : MonoBehaviour
 						_model.SquareInfo[x, k].Value = 0;
 						isAdd = true;
 						//TODO
-						_model.SquareInfo[x, y].Value = _model.SquareInfo[x, y].Value * 2;
+						_model.SquareInfo[x, y].UItranTransform = _model.SquareInfo[x, y].UItranTransform;
 						_model.SquareInfo[x, k].DestroySquare();
+						_model.SquareInfo[x, y].UItranTransform.GetComponentInChildren<TMP_Text>().text =
+							"" + _model.SquareInfo[x, y].Value;
 					}
 					else
 					{
@@ -333,13 +357,15 @@ public class GameMgr : MonoBehaviour
 						//再将value[k,j] 的值设为0（即将移动）
 						//再将value[i+1，j] 的值替换成中间值
 						//这样可以避免在k == i+1 时将值清零的情况
-						int medianValue = _model.SquareInfo[x, k].Value;
+//						SquareObj medianObj = new SquareObj(_model.SquareInfo[x, k].transform, _model.SquareInfo[x, k].Value, _model.SquareInfo[x, k].standardPos);
+						if(k == y - 1) continue;
+						
+						_model.SquareInfo[x, y - 1].Value = _model.SquareInfo[x, k].Value;
+						_model.SquareInfo[x, y - 1].UItranTransform = _model.SquareInfo[x, k].UItranTransform;
+						_model.SquareInfo[x, y - 1].UItranTransform.localPosition = _model.SquareInfo[x, y - 1].standardPos.localPosition;
+						
 						_model.SquareInfo[x, k].Value = 0;
-						_model.SquareInfo[x, y - 1].Value = medianValue;
-						//TODO
-						SquareObj medianObj = _model.SquareInfo[k, y];
-						_model.SquareInfo[x, y - 1] = medianObj;
-						_model.SquareInfo[x, y - 1].transform.localPosition = _model.StandardPos[x, y - 1].localPosition;
+						_model.SquareInfo[x, k].UItranTransform = null;
 						break;
 					}
 				}

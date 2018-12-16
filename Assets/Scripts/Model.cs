@@ -39,10 +39,11 @@ public class Model : MonoBehaviour
 	/// 存储标准的方块坐标数据
 	/// </summary>
 	public Transform[,] StandardPos = new Transform[4,4];
+
 	/// <summary>
 	/// 存储方块信息数据：坐标， 值
 	/// </summary>
-	public SquareObj[,] SquareInfo = new SquareObj[4,4];
+	public SquareObj[,] SquareInfo = new SquareObj[4, 4];
 
 	private void Awake()
 	{

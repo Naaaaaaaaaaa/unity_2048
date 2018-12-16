@@ -46,15 +46,18 @@ public class Ctrl : MonoBehaviour
 	public void GetAllRootChildren(Transform Root)
 	{
 		_Model = Model.Instance;
+		Transform[] trans = Root.GetComponentsInChildren<Transform>();
 		for (int i = 0; i < Root.childCount; i++)
 		{
 			//取整
 			int integer = i / 4;
 			//取余
 			int remainder = i % 4;
-			_Model.StandardPos[remainder, integer] = Root.GetChild(i);
-			SquareObj sObj = new SquareObj(GameObject.Find("parent/Num_Null").transform, GlobalData.GetValue(1), _Model.StandardPos[remainder, integer]);
-			_Model.SquareInfo[remainder, integer] = sObj;
+			
+//			_Model.StandardPos[remainder, integer] = Root.GetChild(i);
+			//SquareObj sObj = new SquareObj(null, 0, Root.GetChild(i));
+			Transform tran = trans[i + 1];
+			_Model.SquareInfo[remainder, integer] = new SquareObj(null, 0, tran);
 		}
 
 //		for (int y = 0; y < 4; y++)
@@ -91,10 +94,10 @@ public class Ctrl : MonoBehaviour
 		_View = View.Instance;
 		int row = Random.Range(0, 4);
 		int col = Random.Range(0, 4);
-		while (_Model.SquareInfo[row, col] != null) //即将生成方块的地方已经存在方块
+		if (_Model.SquareInfo[row, col].Value != 0)//如果这个位置已经存在方块
 		{
-			row = Random.Range(0, 4);
-			col = Random.Range(0, 4);
+			SpwanSquare();
+			return;
 		}
 		
 		//生成预制体
@@ -106,10 +109,10 @@ public class Ctrl : MonoBehaviour
 		else if(random == 2){
 			_gameObject = Instantiate(Resources.Load<GameObject>(_Model.Path_Num4), _View.parent);
 		}
-		_gameObject.transform.localPosition = _Model.StandardPos[row, col].localPosition;
+		_gameObject.transform.localPosition = _Model.SquareInfo[row, col].standardPos.localPosition;
 		//存储到对应的二维数组中
-		_Model.SquareInfo[row, col] = new SquareObj(_gameObject.transform, GlobalData.GetValue(random), _Model.StandardPos[row, col]);
-		_Model.SquareInfo[row, col].Value = GlobalData.GetValue(random);
+		Transform standardTran = _Model.SquareInfo[row, col].standardPos;
+		_Model.SquareInfo[row, col] = new SquareObj(_gameObject.transform, GlobalData.GetValue(random), standardTran);
 		_gameObject = null;
 		Debug.Log(string.Format("生成的物体：{0}，{1}，值：{2}", row, col, GlobalData.GetValue(random)));
 	}
