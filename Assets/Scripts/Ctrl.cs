@@ -94,6 +94,7 @@ public class Ctrl : MonoBehaviour
 		_View = View.Instance;
 		int row = Random.Range(0, 4);
 		int col = Random.Range(0, 4);
+//		int col = 1;
 		if (_Model.SquareInfo[row, col].Value != 0)//如果这个位置已经存在方块
 		{
 			SpwanSquare();

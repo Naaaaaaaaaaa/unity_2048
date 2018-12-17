@@ -19,7 +19,7 @@ using UnityEngine;
 
 public class SquareObj
 {
-    public Transform UItranTransform;
+    public Transform UITransform;
     /// <summary>
     /// 标准坐标
     /// </summary>
@@ -37,13 +37,13 @@ public class SquareObj
 
     public SquareObj(Transform tran, int value, Transform standardPos)
     {
-        this.UItranTransform = tran;
+        this.UITransform = tran;
         this.Value = value;
         this.standardPos = standardPos;
     }
 
     public void DestroySquare()
     {
-        GameObject.Destroy(UItranTransform.gameObject);
+        GameObject.Destroy(UITransform.gameObject);
     }
 }
